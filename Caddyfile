@@ -1,0 +1,5 @@
+73.243.105.190:80 {
+        root public_html/
+        gzip
+        ext .html
+}
