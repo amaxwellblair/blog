@@ -17,51 +17,49 @@
     <br>
     <div class="container">
       <h3>Objectives</h3>
-      <ul>
+      <ol>
         <li>Use that Raspberry Pi (RPi) you have collecting dust!</li>
-        <li>Learn how to use SSH</li>
+        <li>Learn how to use SSH on OSX</li>
         <li>Explore some basic networking</li>
-      </ul>
+      </ol>
       <p>
         Note: The Raspberry Pi Foundation has done a great job
         <a href="https://www.raspberrypi.org/documentation/remote-access/">documenting</a> how to login remotely to your little princess...but for the sake of being thorough
       </p>
       <h3>SSH connection on your local network</h3>
-      <ul>
-        <li>With your RPi up and running it should have an IP address by this point. We can check the IP by logging in using a monitor or checking the router connecting the RPi to the internet</li>
-        <ul><li>You should log into your router using admin priviledges (if you have never done this a quick google search should get you up to speed) and check for devices connected to the router. Some familiar faces shoud be present - one of which should be your RPi.</li></ul>
-        <li>With your RPi address in hand you can locally connect to the server using SSH</li>
-        <ul><li>SSH in a nutshell is a secure channel within an unsecure network (source: <a href="https://en.wikipedia.org/wiki/Secure_Shell">Wikipedia</a>)</li></ul>
-        <li>`ssh pi@0.0.0.0` 0.0.0.0 representing your local IP address</li>
-        <ul><li>This will prompt you for your password the default password for your RPi is 'raspberry'</li></ul>
+      <ol>
+        <li>Go ahead and turn you RPi on. If your RPi is up and running it should have an IP address by this point (if connected to the internet). We will need this in order to connect over the LAN to your RPi.</li>
+        <li>We can check the IP by logging in using a monitor/keyboard or by checking the router connecting the RPi to the internet</li>
+        <li>If you would like to do this via the command line inside your RPi:</li>
+        <img href="../images/find_local_ip.png">Image of terminal line</img>
+        <li>If you would like to do this "headless" you should log into your router using admin priviledges (if you have never done this a quick google search should get you up to speed) and check for devices connected to the router. Some familiar faces shoud be present - one of which should be your RPi.</li>
+        <li>With your RPi address in hand you can locally connect to the server using SSH:</li>
+        <br/>
+        <code>$ ssh pi@0.0.0.0</code>
+        <br/><br/>
+        "0.0.0.0" representing your local RPi IP address
+        <br/><br/>
+      </ul><li>This will prompt you for your password the default password for your RPi is 'raspberry'</li></ul>
         <li>Once logged in this should bring you to the RPi terminal!</li>
-      </ul>
-      <p>Alright you are some hot stuff logging in remotely to your RPi... Now how would you do that when you are not in the Local Area Network (LAN)?</p>
+      </ol>
+      <p>Alright you are some hot stuff logging in remotely to your RPi... Now how would you do that when you are not in the LAN?</p>
       <h3>SSH connection from anywhere</h3>
-      <ul>
-        <li>The RPi Foundation suggests you use this: <a href="https://www.raspberrypi.org/documentation/remote-access/access-over-Internet/internetaccess.md">weaved</a></li>
-        <ul><li>I have nothing against weaved but one of our objectives is to learn some basic networking so this tutorial will do this the manual way</li></ul>
-        <li>Bring up you admin page for your local router again and you should see an option for "Port Forwarding" select this option</li>
-      </ul>
-      <p>Wait...what is "Port Forwarding"?</p>
-      <ul>
-        <li>Your router's IP address is what every device on its network uses to access the internet.</li>
-        <li>Assuming you have multiple devices how does the router know which device is which?</li>
-        <ul><li>Earlier in the tutorial we looked up our RPi IP address - this is how the router can distinguish between devices</li></ul>
-        <li>Port forwarding allows requests from a client (in our case an SSH client) to be directed to the correct device on the correct port</li>
-      </ul>
-      <p>OK...hopefully you kind of git the gist</p>
-      <ul>
-        <li>Once on the Port Forwarding page we want to add a new item with a type TCP/UDP and enable global port forwarding</li>
-        <li>We should use port 22 in the port categoy of our new item</li>
-        <ul><li>The RPi and other computers listen on port 22 for incoming SSH requests</li></ul>
-        <li>Entering the local IP address we found earlier we have the last data point in order to begin port forwarding to our RPi</li>
-      </ul>
-      <p>Now you should be able to connect to your RPi from anywhere!</p>
-      <ul>
-        <li>Similar to how we logged in before (`ssh pi@0.0.0.0`) now we will use the routers IP address instead of RPi's IP address</li>
-        <ul><li>You can now test this out from your LAN</li></ul>
-      </ul>
+      <p>The RPi Foundation suggests you use this: <a href="https://www.raspberrypi.org/documentation/remote-access/access-over-Internet/internetaccess.md">weaved</a></p>
+
+      <p>I have nothing against weaved but one of our objectives is to experience some basic networking so this tutorial will do it the manual way</p>
+      <ol>
+        <li>Bring up your admin page for your local router again and you should see an option for "Port Forwarding" select this option</li>
+        <p>Check out this great <a href="http://superuser.com/questions/284051/what-is-port-forwarding-and-what-is-it-used-for">post</a> if you just said "Wait...what is 'Port Forwarding'?"</p>
+        <li>Once on the Port Forwarding page we want to add a new item with a type TCP/UDP and enable it for port forwarding</li>
+        <li>The RPi and other computers listen on port 22 for incoming SSH requests. So should use port 22 in the port category of our newly created item</li>
+        <li>Then enter in the RPi IP address we found earlier and start the port fowarding</li>
+      </ol>
+      <p>Now you should be able to connect to your RPi from anywhere! Enter in your IP</p>
+      <code>$ ssh pi@0.0.0.0</code>
+      <br/><br/>
+      "0.0.0.0" representing your router's IP address
+      <br/>
+      <p>You can now test this out from your LAN</p>
     </div>
 
 
@@ -77,8 +75,6 @@
           </div>
           <div class="col l3 s12">
             <h5 class="white-text"></h5>
-            <ul>
-            </ul>
           </div>
           <div class="col l3 s12">
             <h5 class="white-text">Connect</h5>
