@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title>How to host your own webserver in under an hour</title>
+  <link rel="stylesheet" href="../css/materialize.css" type="text/css"/>
+</head>
+<body>
+  <nav class="brown lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+
+  <h2>Objectives</h2>
+  <ul>
+    <li>Use that Raspberry Pi (RPi) you have collecting dust!</li>
+    <li>
+      Create a light weight webserver using a RPi and a Go server server
+      called <a href="https://caddyserver.com">Caddy</a>
+    </li>
+    <li>Explore some basic networking</li>
+  </ul>
+  <h3>Step 1</h3>
+  <ul>
+    <li>Grab that RPi you have at the bottom of your hardware drawer</li>
+    <li>Given our use case is a server we should make use of the RPi ethernet port</li>
+    <li>This tutorial will be delivered via the command line so it is suggested to run the RPi "headless" (no desktop)</li>
+    <ul>
+      <li>Well that is fine and dandy but how do you go about remoting into your RPi?</li>
+      <li><a href="../quickies/how_to_ssh.html">This is convenient</a></li>
+    </ul>
+  </ul>
+
+  <p>`sudo apt-get -f install libcap2-bin`</p>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+</body>
+</html>
