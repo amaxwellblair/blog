@@ -1,66 +1,17 @@
 <html>
   <head>
     <title>Blog Blair</title>
-    <link rel="stylesheet" href="css/materialize.css" type="text/css"/>
-    <link rel="stylesheet" href="css/my_style.css" type="text/css"/>
+    {{.Include "/templates/header_template.html"}}
   </head>
   <body>
-    <nav class="brown lighten-0" role="navigation">
-      <div class="nav-wrapper container">
-        <ul class="right hide-on-med-and-down">
-          <li><a href="index.html">Home</a></li>
-        </ul>
-      </div>
-    </nav>
-    <!-- Non-template portion -->
-
-
+    {{.Include "/templates/nav_template.html"}}
 
     <img class="responsive-img" src="images/ireland.jpg"></img>
     <br>
     <div class= "container">
       <p align="justify"> | <a href="quickies/how_to_ssh.html">How to SSH</a> | <a href="#">How to host your own Raspberry Pi server using Caddy</a> | Lorem ipsum dolor sit amet consectetur | Adipiscing elit | Etiam mollis tempus nunc ornare | Fringilla | Nullam vitae venenatis libero sit | Amet blandit arcu | Morbi sit amet hendrerit nisl | Eu luctus ante | Suspendisse potenti | Morbi faucibus non dui id | Dignissim | Mauris vitae dolor turpis | Nunc in augue efficitur sagittis | Diam at malesuada arcu | Nam semper volutpat tellus | Vestibulum placerat dapibus dolor non | Dictum | Quisque non dignissim est | Quisque luctus viverra mi a | Ultricies dui ornare ut | Suspendisse ac mauris a justo | Cursus gravida in vitae nisl | Mauris rhoncus leo in arcu | Blandit sit amet dignissim ex ornare | Pellentesque pellentesque a ipsum vitae | Aliquet | Morbi finibus faucibus neque vel | Tristique | Quisque risus lectus pellentesque sed | Ante ultricies condimentum porta urna | Integer vestibulum ullamcorper augue non faucibus | Enim ultricies nec | Curabitur interdum sodales ultricies | Praesent posuere rhoncus pellentesque | Donec sit amet commodo mauris | Praesent sed felis ultrices pulvinar | Lorem id sodales augue | Quisque non faucibus lectus quis | Congue erat | Maecenas eu risus placerat fringilla | Nulla quis venenatis sapien | Aenean in arcu vestibulum commodo | Purus vel tincidunt massa | Maecenas orci sapien pellentesque id | Porta non ornare at sem | Nam ultricies tempus nulla et | Interdum ex efficitur ornare | Pellentesque vel semper eros sit | Amet bibendum libero | Nulla quis nunc eget mauris accumsan | Fringilla | Ut id vulputate tellus | Maecenas convallis felis eget egestas | Pretium nunc ipsum iaculis libero non | Ullamcorper lectus magna ut sem | Morbi eu tristique sem | Etiam ornare feugiat tincidunt | Nullam velit est vulputate et | Sem sit amet vestibulum dignissim arcu | Maecenas lux et terra | </p>
     </div>
-    <div>
-    </div>
 
-
-
-
-    <!-- End of non-template portion -->
-    <footer class="page-footer brown">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">About</h5>
-            <p class="grey-text text-lighten-4">Allan Maxwell Blair is a web developer currently studying at the Turing School of Software Design. His background includes engineering at Rensselaer Polytechnic Institute, Investment Banking at J.P. Morgan and a healthy obsession with epicurean delights.</p>
-          </div>
-          <div class="col l3 s12">
-            <h5 class="white-text"></h5>
-            <ul>
-            </ul>
-          </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">Connect</h5>
-            <ul>
-              <li><a class="white-text" href="mailto:a.maxwell.blair@gmail.com">Email</a></li>
-              <li><a class="white-text" href="https://github.com/amaxwellblair">Github</a></li>
-              <li><a class="white-text" href="https://www.linkedin.com/in/allan-maxwell-blair-04bb0336">Linkedin</a></li>
-              <li><a class="white-text" href="https://twitter.com/amaxwellblair">Twitter</a></li>
-              <li><a class="white-text" href="documents/Allan_Maxwell_Blair_2015.pdf">Resume</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
-          &copy; 2016 Allan Blair | Served by <a class="blue-text text-lighten-3" href="https://caddyserver.com">Caddy</a>
-        </div>
-      </div>
-    </footer>
-    <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
-  </body>
+    {{.Include "/templates/footer_template.html"}}
+      </body>
 </html>
