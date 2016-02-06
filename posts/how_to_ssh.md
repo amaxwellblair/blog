@@ -1,7 +1,7 @@
 ---
 template: post
 title: How to SSH
-sitename: Blog Bear
+sitename: Blog Blair
 ---
 
 ####Objectives
@@ -35,7 +35,7 @@ The RPi Foundation suggests you use this: <a href="https://www.raspberrypi.org/d
 
 I have nothing against weaved but one of our objectives is to experience some basic networking so this tutorial will do it the manual way
 
-1. Bring up your admin page for your local router again and you should see an option for "Port Forwarding" select this option. Check out this great <a href="http://superuser.com/questions/284051/what-is-port-forwarding-and-what-is-it-used-for">post</a> if you just said "Wait...what is 'Port Forwarding'?"
+1. Bring up your admin page for your local router again and you should see an option for "Port Forwarding" select this option. Check out this great <a href="http://superuser.com/questions/284051/what-is-port-forwarding-and-what-is-it-used-for  ">post</a> if you just said "Wait...what is 'Port Forwarding'?"
 
 2. Once on the Port Forwarding page we want to add a new item with a type TCP/UDP and enable it for port forwarding
   - The RPi and other computers listen on port 22 for incoming SSH requests. So should use port 22 in the port category of our newly created item
@@ -48,3 +48,13 @@ I have nothing against weaved but one of our objectives is to experience some ba
   "0.0.0.0" representing your router's IP address
 
 You can now test this out from your LAN
+
+####Static IP address
+
+-  Your router typically assigns IP addresses dynamically to new devices that are found on the network. Unfortunately this will change your Raspberry Pi's IP address from time to time. Although this is much better than the alternative which is manually adding new guests to your network every time a friend comes over and wants some wifi.
+
+- So if we expect our RPi to be at the same address when ever we SSH we may need to do a bit more work
+
+  - Depending on your router it could be as simple as locating the device on your admin page and enabling a static IP address
+
+  - In a situation where this is not an option several different sites outline how the process is done [here is one example](http://elinux.org/RPi_Setting_up_a_static_IP_in_Debian)
