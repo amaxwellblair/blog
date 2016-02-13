@@ -1,6 +1,6 @@
   ---
 template: post
-title: How to host a web server using Raspberry Pi and Caddy
+title: How to host a web server using Caddy on a Raspberry Pi
 sitename: Blog Blair
 ---
 
