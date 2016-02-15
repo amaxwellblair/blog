@@ -6,18 +6,48 @@
   <body>
     {{.Include "/templates/index/nav_template.html"}}
 
-    <img class="responsive-img" src="images/ireland.jpg"></img>
+    <!-- <img class="responsive-img" src="images/ireland.jpg"></img> -->
     <br>
-    <div class= "container">
-      <h5>Recent blog posts</h5>
-      <div class="collection">
-        <a href="posts/how_to_ssh.md" class="collection-item">How to SSH</a>
-        <a href="posts/how_to_host_using_RPi.md" class="collection-item">How to host a web server using Caddy on a Raspberry Pi</a>
+    <div class="container">
+      <div class="row">
+        <a href="posts/how_to_ssh.md">
+          <div class="col m4">
+            <div class="card" id="pacifica">
+              <div class="card-content white-text">
+                <span class="card-title">How to SSH</span>
+                <i class="large material-icons">settings</i>
+              </div>
+            </div>
+          </div>
+        </a>
+        <div class="col m8">
+          <a href="posts/how_to_host_using_RPi.md">
+            <div class="card" id="apple_chic">
+              <div class="card-content white-text">
+                <span class="card-title">Hosting a webserver with Raspberry Pi</span>
+                <i class="large material-icons">settings</i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <a href="#">
+          <div class="col m8">
+            <div class="card" id="cheery_pink">
+              <div class="card-content white-text">
+                <span class="card-title">Introduction to Caddy server extensions</span>
+                <i class="large material-icons">settings</i>
+              </div>
+            </div>
+          </div>
+        </a>
       </div>
-      <!-- <p><a href="posts/how_to_ssh.md">How to SSH</a> -->
-      <!-- <p><a href="#">How to host your own Raspberry Pi server using Caddy</a></p> -->
+    </div>
+
+
+    <div class="spacer">
     </div>
     <div class="spacer">
+
     </div>
 
     {{.Include "/templates/index/footer_template.html"}}

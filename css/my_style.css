@@ -5,3 +5,29 @@ footer.page-footer {
 div.spacer {
   height: 200px;
 }
+
+#top_border {
+  border-style: solid;
+  border-top-width: thin;
+  border-top-color: lightgrey;
+}
+
+#mighty_slate {
+  background-color: rgb(85,98,112);
+}
+
+#pacifica {
+  background-color: rgb(78, 205, 196);
+}
+
+#apple_chic {
+  background-color: rgb(199, 244, 100);
+}
+
+#cheery_pink {
+  background-color: rgb(255, 107, 107);
+}
+
+#grandma_pillow {
+  background-color: rgb(196, 77, 88);
+}

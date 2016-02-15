@@ -12,23 +12,23 @@ sitename: Blog Blair
 
 #### Installing Golang
 
-Grab that RPi you have at the bottom of your hardware drawer
-Given our use case is a server we should make use of the RPi ethernet port for our internet connection
-This tutorial will be given through the command line so it is suggested to run the RPi "headless"... meaning no desktop
-Now that your RPi is up and running on the internet you should connect via SSH
-If you have never SSH'd into a computer before check out my short post on it [here](/how_to_ssh)
-On the command line we need to install Golang. The we are going to use the following:
+This tutorial will be given through the command line so it is suggested to run the Raspberry Pi "headless"... meaning no desktop
+
+Now that your RPi is up and running on the internet you should connect via SSH. If you have never SSH'd into a computer before check out my short post on it [here](/how_to_ssh)
+
+To begin installing Golang download the compiled version from [Marek Kubica](https://xivilization.net/~marek/blog/2015/05/04/go-1-dot-4-2-for-raspberry-pi/)!
+
+````
+wget https://xivilization.net/~marek/raspbian/xivilization-raspbian.gpg.key -O - | sudo apt-key add -
+sudo wget https://xivilization.net/~marek/raspbian/xivilization-raspbian.list -O /etc/apt/sources.list.d/xivilization-raspbian.list
+
+sudo aptitude update
+sudo aptitude install golang
+````
 
 1. Aptitude - A package manager for linux
-2. Go 1.4 compiled by our friendly neighborhood RPi [user](https://xivilization.net/~marek/blog/2015/05/04/go-1-dot-4-2-for-raspberry-pi/)!
+2. Go 1.4 compiled by our friendly neighborhood RPi [user]
 
-````
-    wget https://xivilization.net/~marek/raspbian/xivilization-raspbian.gpg.key -O - | sudo apt-key add -
-    sudo wget https://xivilization.net/~marek/raspbian/xivilization-raspbian.list -O /etc/apt/sources.list.d/xivilization-raspbian.list
-
-    sudo aptitude update
-    sudo aptitude install golang
-````
 
 You done? Awesome. This install should default to your `$HOME` directory.
 First set your `$GOPATH` to where ever you decide to keep golang.
