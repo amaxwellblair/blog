@@ -4,7 +4,9 @@ title: How to SSH
 sitename: Blog Blair
 ---
 
-####Objectives
+###How to to SSH on your Raspberry Pi
+
+#####Objectives
 1. Use that Raspberry Pi (RPi) you have collecting dust!
 2. Learn how to use SSH on OSX
 3. Explore some basic networking
