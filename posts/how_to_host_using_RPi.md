@@ -1,9 +1,11 @@
-  ---
+---
 template: post
 title: How to host a web server using Caddy on a Raspberry Pi
 sitename: Blog Blair
 ---
 ### Hosting a webserver with Raspberry Pi
+
+The website you are currently viewing uses the set up herein described. I wanted to share my experiences so others could host on their own website!
 
 ##### Objectives
 1. Use that Raspberry Pi you have collecting dust!
