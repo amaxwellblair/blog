@@ -13,7 +13,11 @@ The website you are currently viewing uses the set up herein described. I wanted
 3. Use a light weight server called [Caddy](https://caddyserver.com)
 4. Explore some basic networking
 
-#### Installing Golang
+#### Installing Caddy without Golang
+
+Check out the binary for [Linux ARM](https://caddyserver.com/download). This should get you up and running in no time and skip the installation process of including the Golang compiler. While Caddy does offer various extensions (git, jsonp, etc) with your chosen download you will not be able to dynamically add or remove extensions without Caddy packaging the binary. To avoid sounding ominous Caddy is very active in the community and continues to encourage development on its platform. So in short compiling your own Caddy binary versus using the prepackaged binary are both good choices and cater to different software preferences.
+
+#### Installing Caddy with Golang
 
 One way to connect to your Raspberry Pi's command line is to use [SSH](how_to_ssh)
 
@@ -42,7 +46,7 @@ $ export GOPATH="${HOME}/go"
 $ export PATH="${GOPATH}/bin:${PATH}"
 ````
 
-#### Installing and configuring Caddy
+#### Installing with Golang and configuring Caddy
 
   Why Caddy?
 
