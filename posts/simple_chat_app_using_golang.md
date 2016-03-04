@@ -23,7 +23,7 @@ footer.
 If you want to immediately get ankle deep in code just check out [chit-chat](https://github.com/amaxwellblair/chit)
 
 #### Getting started
-Install [Golang](https://golang.org/doc/install) if you already have not
+Install [Golang](https://golang.org/doc/install) if you have not
 
 Basic understanding of programming and Golang
 
