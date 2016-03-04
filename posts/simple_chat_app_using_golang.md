@@ -4,7 +4,7 @@ title: Simple Chat App
 sitename: Blog Blair
 ---
 
-##  Make a chat app using Golang
+###  Make a chat app using Golang
 A chat application is a great way to learn about concurrency and in this particular
 case parallelism. As an avid fan of Golang and [DigitalOcean's](https://www.digitalocean.com/)
 awesome product I decided to create "chit-chat" a command line chat application
@@ -22,7 +22,7 @@ footer.
 
 If you want to immediately get ankle deep in code just check out [chit-chat](https://github.com/amaxwellblair/chit)
 
-#### Getting started
+##### Getting started
 Install [Golang](https://golang.org/doc/install) if you have not
 
 Basic understanding of programming and Golang
@@ -41,7 +41,7 @@ Let's think about how a primitive chat room works:
 3. Chat room broadcasts message to all connected clients
 4. Rinse and repeat
 
-##### How do you send messages to the chat room?
+#### How do you send messages to the chat room?
 A simple POST request is an easy way to send data via HTTP. Why not just use
  cURL (client for URLs)?
 
@@ -52,7 +52,7 @@ $ curl --data "body=Hello world!" http://localhost:9000
 This is a great way to test your server and for a [MVP](https://en.wikipedia.org/wiki/Minimum_viable_product)
  this is good enough for now.
 
-##### How do we create our chat room?
+#### How do we create our chat room?
 A chat room is simply a service that broadcasts a message to all of those connected
 to the room. We can use a basic server to implement this functionality.
 
