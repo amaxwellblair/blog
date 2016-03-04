@@ -153,4 +153,4 @@ $ caddy
 
 
 
-  Your Caddy server should be up and running! Type in your router's IP address in your browser and it should redirect you to your "Hello World!".
+Your Caddy server should be up and running! Type in your router's IP address in your browser and it should redirect you to your "Hello World!".
