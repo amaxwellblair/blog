@@ -67,7 +67,7 @@ import (
 )
 
 func main() {
-    http.ListenAndServe(:9000, nil)
+    http.ListenAndServe(":9000", nil)
 }
 ```
 
@@ -92,7 +92,7 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
     http.HandleFunc("/", rootHandler)
-    http.ListenAndServe(:9000, nil)
+    http.ListenAndServe(":9000", nil)
 }
 ```
 
@@ -172,7 +172,7 @@ our "/" path all at the same time?
 Concurrency.
 
 Fortunately golang's `net/http` package has concurrency built in using go
-routines. So our current implementation will kind of work, but let's cross that
+routines. So our current implementation using a `for` loop will kind of work, but let's cross that
 bridge later on in the post.
 
 #### How do we receive messages from the chat room?
@@ -306,7 +306,63 @@ Let's see what happens when we run our server again with multiple connections:
 
 <img src="../images/chat_app_fix_server.png">
 
-As you can see including `time.Sleep` has drastically reduced our CPU needed and now we are running a truly concurrent process.
+As you can see including `time.Sleep` has drastically reduced our CPU needed
+and now we are running a truly concurrent process.
+
+#### Go concurrency primitives
+
+Using a `for` loop and global variables seem to work as seen by our examples
+above. Is this the best way to queue our clients? Probably not.
+
+Since we are working with go routines we can employ one of Go's built in
+ primitives to communicate between concurrent processes called a channel.
+
+Check out how they are implemented below:
+```
+package main
+
+import (
+	"fmt"
+	"net/http"
+)
+
+type handler struct {
+	message chan string
+}
+
+func (h *handler) chatHandler(w http.ResponseWriter, r *http.Request) {
+	switch r.Method {
+	case "GET":
+		h.polling(w, r)
+	case "POST":
+		h.broadcast(w, r)
+	}
+}
+
+func (h *handler) broadcast(w http.ResponseWriter, r *http.Request) {
+	h.message <- r.FormValue("body")
+	close(h.message)
+	h.message = make(chan string)
+}
+
+func (h *handler) polling(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, <-h.message)
+}
+
+func main() {
+	ch := make(chan string)
+	h := handler{message: ch}
+	http.HandleFunc("/chat", h.chatHandler)
+	http.ListenAndServe(":9000", nil)
+}
+```
+
+Similar to our previous `for` loop the `polling` function will wait until
+`broadcast` sends a message. Then our server will respond to the clients that
+were previously connected to the chat room.
+
+One benefit of using channels is the ability to close them. Allowing for us to
+ensure a specific message is sent to our clients.
 
 Please checkout my
 [repository](https://github.com/amaxwellblair/chit) for more code and a nicer command line interface.

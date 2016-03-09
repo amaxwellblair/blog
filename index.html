@@ -10,22 +10,33 @@
     <br>
     <div class="container">
       <div class="row">
-        <a href="posts/how_to_ssh">
-          <div class="col m4">
-            <div class="card" id="pacifica">
-              <div class="card-content white-text">
-                <span class="card-title">How to SSH</span>
-                <br>
-                <i class="large material-icons">settings</i>
-              </div>
+        <div class="col m4">
+          <a href="posts/how_to_ssh">
+          <div class="card" id="pacifica">
+            <div class="card-content white-text">
+              <span class="card-title">How to SSH</span>
+              <br>
+              <i class="large material-icons">settings</i>
             </div>
           </div>
-        </a>
+          </a>
+        </div>
         <div class="col m8">
           <a href="posts/how_to_host_using_RPi">
             <div class="card" id="apple_chic">
               <div class="card-content white-text">
-                <span class="card-title">Hosting a webserver with Raspberry Pi</span>
+                <span class="card-title">Host a webserver with Raspberry Pi</span>
+                <br>
+                <i class="large material-icons">settings</i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col m8">
+          <a href="posts/simple_chat_app_using_golang">
+            <div class="card" id="mighty_slate">
+              <div class="card-content white-text">
+                <span class="card-title">Explore concurrency making a chat app in Golang</span>
                 <br>
                 <i class="large material-icons">settings</i>
               </div>
@@ -33,7 +44,7 @@
           </a>
         </div>
         <a href="posts/intro_to_caddy_ext">
-          <div class="col m8">
+          <div class="col m8 offset-m4">
             <div class="card" id="cheery_pink">
               <div class="card-content white-text">
                 <span class="card-title">Introduction to Caddy server extensions</span>
@@ -46,12 +57,6 @@
       </div>
     </div>
 
-
-    <div class="spacer">
-    </div>
-    <div class="spacer">
-
-    </div>
 
     {{.Include "/templates/index/footer_template.html"}}
       </body>
