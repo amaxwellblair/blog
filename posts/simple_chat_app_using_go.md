@@ -370,3 +370,5 @@ ensure a specific message is sent to our clients.
 
 Please checkout my
 [repository](https://github.com/amaxwellblair/chit) for more code and a nicer command line interface.
+
+Also checkout a contributor's sleek angular front-end for the chat [application](https://gocodecloud.com/post/simple-go-chat/).
