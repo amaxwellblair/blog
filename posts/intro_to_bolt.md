@@ -143,7 +143,7 @@ func (s *Store) Close() {
 ```
 
 I will skip over some of the more generic pieces and dive right into the Bolt.
-`bolt.Open` will create or find a database at the given path (first arguement).
+`bolt.Open` will create or find a database at the given path (first argument).
 The `0600` is a field for the file type which can be changed given your
 preferred permissions. The final argument which includes `Timeout` can be found
 verbatim in the README:
